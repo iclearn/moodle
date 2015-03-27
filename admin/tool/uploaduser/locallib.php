@@ -353,7 +353,6 @@ function uu_allowed_roles() {
 function uu_allowed_roles_cache() {
     $allowedroles = get_assignable_roles(context_course::instance(SITEID), ROLENAME_SHORT);
     foreach ($allowedroles as $rid=>$rname) {
-        $rolecache = array();
         $rolecache[$rid] = new stdClass();
         $rolecache[$rid]->id   = $rid;
         $rolecache[$rid]->name = $rname;
