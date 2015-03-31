@@ -225,7 +225,7 @@ function url_display_frame($url, $cm, $course) {
         $navurl = "$CFG->wwwroot/mod/url/view.php?id=$cm->id&amp;frameset=top";
         $coursecontext = context_course::instance($course->id);
         $courseshortname = format_string($course->shortname, true, array('context' => $coursecontext));
-        $title = strip_tags($courseshortname.': '.format_string($url->name));
+        $title = s($courseshortname.': '.format_string($url->name), $strip=true);
         $framesize = $config->framesize;
         $modulename = s(get_string('modulename','url'));
         $contentframetitle = format_string($url->name);
