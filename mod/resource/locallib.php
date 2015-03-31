@@ -136,7 +136,7 @@ function resource_display_frame($resource, $cm, $course, $file) {
         $path = '/'.$context->id.'/mod_resource/content/'.$resource->revision.$file->get_filepath().$file->get_filename();
         $fileurl = file_encode_url($CFG->wwwroot.'/pluginfile.php', $path, false);
         $navurl = "$CFG->wwwroot/mod/resource/view.php?id=$cm->id&amp;frameset=top";
-        $title = strip_tags(format_string($course->shortname.': '.$resource->name));
+        $title = s(format_string($course->shortname.': '.$resource->name),$strip=true);
         $framesize = $config->framesize;
         $contentframetitle = format_string($resource->name);
         $modulename = s(get_string('modulename','resource'));
